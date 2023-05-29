@@ -52,6 +52,9 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
+.navbar{
+    position: relative;
+}
 
 .navbar a {
     font-size: 1.7rem;
@@ -68,6 +71,7 @@ body {
 }
 
 #menu-icon {
+    position: relative;
     font-size: 3.6rem;
     color: var(--text-color);
     cursor: pointer;
@@ -95,6 +99,7 @@ section {
 
 .home-content h1 {
     position: relative;
+    display: inline-block;
     font-size: 5.6rem;
     font-weight: 700;
     line-height: 1.3;
@@ -665,6 +670,24 @@ span {
 .footer-icontop a:hover i{
     color: var(--main-color);
 }
+/* Animation */
+
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: yellowgreen;
+    z-index: 98;
+}
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home.show-animate .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
 
 /* BreakPoints  */
 @media(max-width:1200px){
@@ -819,5 +842,10 @@ span {
 @keyframes aboutSpinner {
     100%{
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes showRight {
+    100%{
+        width: 0;
     }
 }
